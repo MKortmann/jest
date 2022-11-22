@@ -5,4 +5,9 @@ describe('Test async function', () => {
 		const result = await isUtensilAvailable('fork')
 		expect(result).toBe(true)
 	})
+	it('will return an error if the utensil is not found', async () => {
+		await expect(isUtensilAvailable('tree')).rejects.toEqual(
+			'No utensils found.'
+		)
+	})
 })
