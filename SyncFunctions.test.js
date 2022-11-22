@@ -1,5 +1,4 @@
-const filterArray = require('./functions')
-const isUtensilAvailable = require('./functions')
+const filterArray = require('./SyncFunctions')
 
 describe('filterArray', () => {
 	it('input is null -> return null', () => {
@@ -15,12 +14,5 @@ describe('filterArray', () => {
 
 	it('input: [50,75,100,125], output [50,75,100,100]', () => {
 		expect(filterArray([50, 75, 100, 125])).not.toContain(125)
-	})
-})
-
-describe('Test async function', () => {
-	it('input [fork, knife, spoon] to be equal [fork, knife, spoon]', async () => {
-		const result = await isUtensilAvailable('fork')
-		expect(result).toBe(true)
 	})
 })
